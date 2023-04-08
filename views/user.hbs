@@ -1,0 +1,51 @@
+<form action="/user/dangky" method="POST" autocomplete="off" enctype="multipart/form-data">
+  <div class="container border p-4 mt-5">
+    <div class="row">
+      <div class="col-md-6 mx-auto">
+        <h1 class="text-center mb-4">Sign Up</h1>
+        <input type="hidden" name="id" value="{{user._id}}" />
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" class="form-control" id="name" value="{{user.name}}" placeholder="Enter your name" required
+            name="name">
+        </div>
+        <div class="form-group">
+          <label for="email">Email address</label>
+          <input type="email" class="form-control" id="email" value="{{user.email}}" placeholder="Enter your email"
+            required name="email">
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" class="form-control" value="{{user.pass}}" id="password"
+            placeholder="Enter your password" required name="pass">
+        </div>
+        <div class="form-group">
+          <label for="avatar">Avatar</label>
+          <div class="custom-file">
+            <img src="" alt="" id="img" style="height: 100px; width: 100px;">
+            <input  type="file" class="custom-file-input" id="img"  required name="img">
+            <label class="custom-file-label" for="avatar">Choose file</label>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </div>
+    </div>
+  </div>
+</form>
+<script>
+  const imgInput = document.getElementById('img');
+  const imgPreview = document.getElementById('img-preview');
+  
+  imgInput.addEventListener('change', () => {
+    const file = imgInput.files[0];
+    const reader = new FileReader();
+  
+    reader.addEventListener("load", function () {
+      imgPreview.src = reader.result;
+    }, false);
+  
+    if (file) {
+      reader.readAsDataURL(file);
+    }
+  });
+</script>

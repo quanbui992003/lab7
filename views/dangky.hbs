@@ -1,0 +1,17 @@
+ <div  style="width: 400px; height: max-content; background-color: white; padding: 25px; margin-top: 80px;
+  border-radius: 20px;  margin-left: 360px;">
+ <h2 class="text-center" style="font-weight: bold;">Đăng ký</h2>
+    <form action="/api/signup" method="POST" style="margin-top: 20px;">
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="text" class="form-control" id="email" placeholder="User name" name="username" >
+      </div>
+      <div class="form-group">
+        <label for="password">Mật khẩu:</label>
+        <input type="text" class="form-control" id="password" placeholder="Password" name="password" >
+      </div>
+     <div style="color: red;"> {{error}}</div> 
+      <input type="submit" class="btn btn-primary" value="Đăng Ký">
+     <a href="/api/login" class="btn btn-info">Đăng Nhập</a>
+    </form>
+ </div>

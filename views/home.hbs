@@ -1,0 +1,21 @@
+<a href="/api/addBook" class="btn btn-warning" style="margin-top: 20px;">Them sach</a>
+<table class="table">
+    <thead>
+      <tr>
+        <th>isbn</th>
+        <th>title</th>
+        <th>author</th>
+        <th>publisher</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each books}}
+      <tr>
+        <td>{{this.isbn}}</td>
+        <td>{{this.title}}</td>
+        <td>{{this.author}}</td>
+        <td>{{this.publisher}}</td>
+      </tr>
+     {{/each}}
+    </tbody>
+  </table>
